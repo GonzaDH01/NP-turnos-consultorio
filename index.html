@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultorio Médico - Turnos</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Consultorio Médico</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#turnos">Reservar Turno</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- Inicio -->
+    <section id="inicio" class="py-5 text-center">
+      <div class="container">
+        <h1 class="display-5 fw-bold">Bienvenido al Consultorio Médico</h1>
+        <p class="lead">Reserve su turno de manera rápida y sencilla.</p>
+        <a href="#turnos" class="btn btn-primary btn-lg">Reservar Ahora</a>
+      </div>
+    </section>
+
+    <!-- Formulario de Turnos -->
+    <section id="turnos" class="py-5 bg-dark">
+      <div class="container">
+        <h2 class="text-center mb-4">Reserva de Turnos</h2>
+        <form class="row g-3 shadow p-4 bg-light rounded">
+
+          <div class="col-md-6">
+            <label for="nombre" class="form-label">Nombre y Apellido</label>
+            <input type="text" class="form-control" id="nombre" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="tel" class="form-control" id="telefono" required>
+          </div>
+
+          <div class="col-md-3">
+            <label for="fecha" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="fecha" required>
+          </div>
+
+          <div class="col-md-3">
+            <label for="hora" class="form-label">Hora</label>
+            <input type="time" class="form-control" id="hora" required>
+          </div>
+          
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-success btn-lg">Confirmar Turno</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-5 text-center bg-light">
+      <div class="container">
+        <h2 class="mb-3">Contacto</h2>
+        <p class="mb-1">📍 Dirección: Av. Siempre Viva 123, Ciudad</p>
+        <p class="mb-1">📞 Teléfono: (011) 1234-5678</p>
+        <p class="mb-1">✉️ Email: contacto@consultorio.com</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-primary text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 Consultorio Médico - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
