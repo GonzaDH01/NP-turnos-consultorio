@@ -70,6 +70,12 @@ form .btn-success {
   font-size: 1.1rem;
 }
 
+#contacto img {
+  width: 35px;
+  height: 35px;
+  border-radius: 55%;
+}
+
 /* Footer */
 footer {
   background: #0b5ed7;
