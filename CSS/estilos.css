@@ -1,0 +1,77 @@
+/* Estilos personalizados para Consultorio Médico */
+
+/* General */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8; 
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, #0d6efd, #0b5ed7);
+}
+.navbar-brand {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.navbar .nav-link {
+  transition: color 0.3s;
+}
+.navbar .nav-link:hover {
+  color: #ffd700 !important; 
+}
+
+/* Sección Inicio */
+#inicio {
+  background: linear-gradient(135deg, #e3f2fd, #f4f6f8);
+  padding: 80px 0;
+}
+#inicio h1 {
+  color: #0b5ed7;
+}
+#inicio p {
+  color: #555;
+}
+#inicio .btn {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+}
+
+/* Formulario de turnos */
+#turnos {
+  background-color: #fff;
+}
+#turnos h2 {
+  color: #0b5ed7;
+  font-weight: 600;
+}
+.form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+form .btn-success {
+  padding: 10px 30px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+}
+
+/* Sección Contacto */
+#contacto {
+  background: #e9f5ff;
+  border-top: 2px solid #0b5ed7;
+}
+#contacto h2 {
+  color: #0b5ed7;
+}
+#contacto p {
+  font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+  background: #0b5ed7;
+  font-size: 0.9rem;
+}
