@@ -52,10 +52,10 @@ body {
   max-width: 800px;
   margin: 0 auto;
 }
-form .btn-success {
+.form .btn-success {
   padding: 10px 30px;
   font-size: 1.1rem;
-  border-radius: 25px;
+  border-radius: 35px;
 }
 
 /* Sección Contacto */
@@ -81,3 +81,5 @@ footer {
   background: #0b5ed7;
   font-size: 0.9rem;
 }
+
+
