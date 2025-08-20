@@ -1,5 +1,5 @@
+@charset "UTF-8";
 /* Estilos personalizados para Consultorio Médico */
-
 /* General */
 * {
   margin: 0;
@@ -8,11 +8,16 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   line-height: 1.6;
 }
 
+/* Footer */
+footer {
+  background: #0b5ed7;
+  font-size: 0.9rem;
+}
 
 /* Navbar */
 .navbar {
@@ -23,29 +28,31 @@ body {
   font-weight: bold;
   letter-spacing: 1px;
 }
+
 .navbar .nav-link {
   transition: color 0.3s;
 }
+
 .navbar .nav-link:hover {
-  color: #ffd700 !important; 
+  color: #ffd700 !important;
 }
 
 .nombre {
-  font-family: 'Brush Script MT', cursive;
+  font-family: "Brush Script MT", cursive;
   font-size: 3rem;
   color: white;
   text-align: center;
 }
 
 .subtitulo {
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   font-size: 1rem;
   color: white;
   text-align: center;
 }
 
 .matricula {
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   font-size: 1rem;
   color: white;
   text-align: center;
@@ -55,15 +62,16 @@ body {
 #inicio {
   background: linear-gradient(135deg, #568db4, #7090af);
   padding: 80px 0;
-
 }
 
 #inicio h1 {
   color: #12161b;
 }
+
 #inicio p {
   color: #080707;
 }
+
 #inicio .btn {
   padding: 12px 25px;
   font-size: 1.1rem;
@@ -72,17 +80,19 @@ body {
 
 /* Formulario de turnos */
 #turnos {
-  background: linear-gradient(135deg, #7090af,#568db4);
+  background: linear-gradient(135deg, #7090af, #568db4);
 }
 
 #turnos h2 {
   color: #0d0f13;
   font-weight: 600;
 }
+
 .form {
   max-width: 800px;
   margin: 0 auto;
 }
+
 .form .btn-success {
   padding: 10px 30px;
   font-size: 1.1rem;
@@ -94,9 +104,11 @@ body {
   background: linear-gradient(135deg, #568db4, #7090af);
   border-top: 1px;
 }
+
 #contacto h2 {
   color: #05090f;
 }
+
 #contacto p {
   font-size: 1rem;
   color: #05090f;
@@ -106,12 +118,6 @@ body {
   width: 35px;
   height: 35px;
   border-radius: 55%;
-} 
-
-/* Footer */
-footer {
-  background: #0b5ed7;
-  font-size: 0.9rem;
 }
 
-
+/*# sourceMappingURL=estilos.css.map */

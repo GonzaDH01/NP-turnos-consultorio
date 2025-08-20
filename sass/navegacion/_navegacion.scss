@@ -1,0 +1,36 @@
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, #0d6efd, #0b5ed7);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.navbar .nav-link {
+  transition: color 0.3s;
+}
+.navbar .nav-link:hover {
+  color: #ffd700 !important; 
+}
+
+.nombre {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+}
+
+.subtitulo {
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+}
+
+.matricula {
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+}
