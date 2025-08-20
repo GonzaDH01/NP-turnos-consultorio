@@ -11,11 +11,6 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   line-height: 1.6;
-
-  
-
-
-
 }
 
 
@@ -58,18 +53,16 @@
 
 /* Sección Inicio */
 #inicio {
-  
+  background: linear-gradient(135deg, #3b5d75, #9dbcdb);
   padding: 80px 0;
-  /* Fondo */
-  background-image: url("../Images/fondo2") no-repeat center center fixed;
-  background-size: cover;
-  
+
 }
+
 #inicio h1 {
-  color: #0b5ed7;
+  color: #12161b;
 }
 #inicio p {
-  color: #555;
+  color: #080707;
 }
 #inicio .btn {
   padding: 12px 25px;
@@ -79,10 +72,10 @@
 
 /* Formulario de turnos */
 #turnos {
-  background-color: #fff;
+  background-color: #505d75;
 }
 #turnos h2 {
-  color: #0b5ed7;
+  color: #0d0f13;
   font-weight: 600;
 }
 .form {
@@ -97,21 +90,21 @@
 
 /* Sección Contacto */
 #contacto {
-  background: #e9f5ff;
-  border-top: 2px solid #0b5ed7;
+  background: #567792;
+  border-top: 1px solid #576a86;
 }
 #contacto h2 {
-  color: #0b5ed7;
+  color: #2667c9;
 }
 #contacto p {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 #contacto img {
   width: 35px;
   height: 35px;
   border-radius: 55%;
-}
+} 
 
 /* Footer */
 footer {
