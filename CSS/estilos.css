@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-.body {
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   line-height: 1.6;
@@ -53,7 +53,7 @@
 
 /* Sección Inicio */
 #inicio {
-  background: linear-gradient(135deg, #3b5d75, #9dbcdb);
+  background: linear-gradient(135deg, #568db4, #7090af);
   padding: 80px 0;
 
 }
@@ -72,8 +72,9 @@
 
 /* Formulario de turnos */
 #turnos {
-  background-color: #505d75;
+  background: linear-gradient(135deg, #7090af,#568db4);
 }
+
 #turnos h2 {
   color: #0d0f13;
   font-weight: 600;
@@ -90,14 +91,15 @@
 
 /* Sección Contacto */
 #contacto {
-  background: #567792;
-  border-top: 1px solid #576a86;
+  background: linear-gradient(135deg, #568db4, #7090af);
+  border-top: 1px;
 }
 #contacto h2 {
-  color: #2667c9;
+  color: #05090f;
 }
 #contacto p {
   font-size: 1rem;
+  color: #05090f;
 }
 
 #contacto img {
