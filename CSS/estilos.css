@@ -11,17 +11,18 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   line-height: 1.6;
+  background-color: #5AB05E;
 }
 
 /* Footer */
 footer {
-  background: #0b5ed7;
+  background: #346f3e;
   font-size: 0.9rem;
 }
 
 /* Navbar */
 .navbar {
-  background: linear-gradient(90deg, #0d6efd, #0b5ed7);
+  background: #346f3e;
 }
 
 .navbar-brand {
@@ -60,8 +61,11 @@ footer {
 
 /* Sección Inicio */
 #inicio {
-  background: linear-gradient(135deg, #568db4, #7090af);
   padding: 80px 0;
+}
+
+.boton {
+  background-color: #5E99D6;
 }
 
 #inicio h1 {
@@ -79,13 +83,13 @@ footer {
 }
 
 /* Formulario de turnos */
-#turnos {
-  background: linear-gradient(135deg, #7090af, #568db4);
-}
-
 #turnos h2 {
   color: #0d0f13;
   font-weight: 600;
+}
+
+.caja {
+  background-color: #5E99D6;
 }
 
 .form {
@@ -100,24 +104,24 @@ footer {
 }
 
 /* Sección Contacto */
-#contacto {
-  background: linear-gradient(135deg, #568db4, #7090af);
-  border-top: 1px;
-}
-
 #contacto h2 {
-  color: #05090f;
+  font-size: 2rem;
+  color: #080505;
 }
 
-#contacto p {
-  font-size: 1rem;
-  color: #05090f;
+#contacto .contact-link {
+  color: #07080a;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
 }
 
-#contacto img {
-  width: 35px;
-  height: 35px;
-  border-radius: 55%;
+#contacto .contact-link:hover {
+  text-decoration: underline;
+}
+
+.map-container {
+  width: 100%;
 }
 
 /*# sourceMappingURL=estilos.css.map */

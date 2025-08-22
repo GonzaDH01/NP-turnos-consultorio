@@ -1,11 +1,12 @@
 /* Formulario de turnos */
-#turnos {
-  background: linear-gradient(135deg, #7090af,#568db4);
-}
 
 #turnos h2 {
   color: #0d0f13;
   font-weight: 600;
+}
+
+.caja {
+  background-color: #5E99D6;
 }
 .form {
   max-width: 800px;
@@ -18,20 +19,24 @@
 }
 
 /* Sección Contacto */
-#contacto {
-  background: linear-gradient(135deg, #568db4, #7090af);
-  border-top: 1px;
-}
+
 #contacto h2 {
-  color: #05090f;
-}
-#contacto p {
-  font-size: 1rem;
-  color: #05090f;
+  font-size: 2rem;
+  color: #080505;
 }
 
-#contacto img {
-  width: 35px;
-  height: 35px;
-  border-radius: 55%;
-} 
+#contacto .contact-link {
+  color: #07080a;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+}
+
+#contacto .contact-link:hover {
+  text-decoration: underline;
+}
+
+.map-container {
+  width: 100%;
+}
+

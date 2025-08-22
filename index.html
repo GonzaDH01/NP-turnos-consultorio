@@ -15,7 +15,7 @@
 
   <!-- HEADER -->
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
 
         <a class="navbar-brand fw-bold" href="#">
@@ -43,8 +43,8 @@
     <section id="inicio" class="py-5 text-center">
       <div class="container">
         <h1 class="display-5 fw-bold">Bienvenido al Consultorio Médico</h1>
-        <p class="lead">Reserve su turno de manera rápida y sencilla.</p>
-        <a href="#turnos" class="btn btn-primary btn-lg">Reservar Ahora</a>
+        <p class="lead fw-bold">Reserve su turno de manera rápida y sencilla.</p>
+        <a href="#turnos" class="boton btn btn-lg fw-bold">Reservar Ahora</a>
       </div>
     </section>
 
@@ -52,7 +52,7 @@
     <section id="turnos" class="py-5">
       <div class="container">
         <h2 class="text-center mb-4">Reserva de Turnos</h2>
-        <form class="row g-3 shadow p-4 bg-primary rounded">
+        <form class=" caja row g-3 shadow p-4  rounded">
             
           <div class="col-md-6">
             <label for="nombre" class="form-label text-white">Nombre y Apellido</label>
@@ -91,18 +91,56 @@
     
 
     <!-- Contacto -->
-    <section id="contacto" class="py-5 text-center">
-      <div class="container">
-        <h2 class="mb-3">Contacto</h2>
-        <p class="mb-1">📍 Dirección: Bv PEDRO CANDIOTTI 436, San Guillermo - Santa Fe</p>
-        <p class="mb-1">📞 Teléfono: (3562) 55-0718</p>
-        <p class="mb-1">✉️ Email: contacto@consultorio.com</p>
+    <section id="contacto" class="py-5">
+  <div class="container">
+    <h2 class="mb-4 text-center"> Contacto</h2>
+
+    <div class="row text-center">
+      <!-- Columna: Íconos -->
+      <div class="col-md-12 text-center mb-4 mb-md-0">
+        <p>
+          <a href="https://wa.me/543562550718" target="_blank" class="contact-link">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" 
+              alt="Logo de WhatsApp" width="30" style="vertical-align:middle; margin-right:8px;">
+            (3562) 55-0718
+          </a>
+        </p>
+
+        <p>
+          <a href="mailto:ribottanoelia@gmail.com" class="contact-link">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" 
+              alt="Logo de Gmail" width="30" style="vertical-align:middle; margin-right:8px;">
+            ribottanoelia@gmail.com
+          </a>
+        </p>
       </div>
-    </section>
+
+      <!-- Columna: Mapa -->
+      <div class="col-md-12">
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3442.926373195521!2d-61.918111056617605!3d-30.3530423124074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c80c62d62d59f1%3A0x9e4f5c8f0c5e3f3f!2sBv.%20Pedro%20Candiotti%20436%2C%20San%20Guillermo%2C%20Santa%20Fe!5e0!3m2!1ses-419!2sar!4v1691406351234!5m2!1ses-419!2sar" 
+            width="85%" 
+            height="100" 
+            style="border:0; border-radius:20px;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-primary text-white text-center py-3">
+  <footer class="text-white text-center py-3">
     <p class="mb-0">&copy; 2025 Consultorio Médico - Todos los derechos reservados</p>
   </footer>
 
