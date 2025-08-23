@@ -11,18 +11,25 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   line-height: 1.6;
-  background-color: #5AB05E;
+}
+
+body {
+  background-image: url("../../Images/fondo/fondo1.JPG");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /* Footer */
 footer {
-  background: #346f3e;
+  background: #C8F9E6;
   font-size: 0.9rem;
 }
 
 /* Navbar */
 .navbar {
-  background: #346f3e;
+  background: #C8F9E6;
 }
 
 .navbar-brand {
@@ -41,21 +48,21 @@ footer {
 .nombre {
   font-family: "Brush Script MT", cursive;
   font-size: 3rem;
-  color: white;
+  color: black;
   text-align: center;
 }
 
 .subtitulo {
   font-family: "Georgia", serif;
   font-size: 1rem;
-  color: white;
+  color: black;
   text-align: center;
 }
 
 .matricula {
   font-family: "Georgia", serif;
   font-size: 1rem;
-  color: white;
+  color: black;
   text-align: center;
 }
 
