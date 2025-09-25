@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const tabla = document.getElementById("tabla-turnos");
   const limpiarBtn = document.getElementById("limpiar-turnos");
+  const fechaPanel = document.getElementById("fecha-panel");
+  const filtrarBtn = document.getElementById("filtrar-turnos");
+  const verTodosBtn = document.getElementById("ver-todos-turnos");
 
   // Modal diagnóstico
   const diagnosticoModal = new bootstrap.Modal(document.getElementById("diagnosticoModal"));
@@ -13,10 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const guardarComentariosBtn = document.getElementById("guardarComentarios");
 
   let turnoIndexActual = null;
-  let modo = null; // "diagnostico" o "comentarios"
 
-  function cargarTurnos() {
-    const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
+  function cargarTurnos(filtroFecha = null) {
+    let turnos = JSON.parse(localStorage.getItem("turnos")) || [];
+
+    // Filtrar por fecha si aplica
+    if (filtroFecha) {
+      turnos = turnos.filter(t => t.fecha === filtroFecha);
+    }
 
     // Ordenar por fecha y hora
     turnos.sort((a, b) => {
@@ -35,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td>${turno.nombre}</td>
-        <td>${turno.email}</td>
+        
         <td>${turno.telefono}</td>
         <td>${turno.fecha}</td>
         <td>${turno.hora}</td>
@@ -67,30 +74,29 @@ document.addEventListener("DOMContentLoaded", () => {
     // Eventos: asistencia
     document.querySelectorAll(".asistencia").forEach(checkbox => {
       checkbox.addEventListener("change", (e) => {
-        const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
+        const turnosLocal = JSON.parse(localStorage.getItem("turnos")) || [];
         const idx = e.target.dataset.index;
-        turnos[idx].asistio = e.target.checked;
-        localStorage.setItem("turnos", JSON.stringify(turnos));
+        turnosLocal[idx].asistio = e.target.checked;
+        localStorage.setItem("turnos", JSON.stringify(turnosLocal));
       });
     });
 
     // Eventos: estado médico
     document.querySelectorAll(".estado-medico").forEach(select => {
       select.addEventListener("change", (e) => {
-        const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
+        const turnosLocal = JSON.parse(localStorage.getItem("turnos")) || [];
         const idx = e.target.dataset.index;
-        turnos[idx].estadoMedico = e.target.value;
-        localStorage.setItem("turnos", JSON.stringify(turnos));
+        turnosLocal[idx].estadoMedico = e.target.value;
+        localStorage.setItem("turnos", JSON.stringify(turnosLocal));
       });
     });
 
     // Eventos: diagnóstico
     document.querySelectorAll(".diagnostico-btn").forEach(btn => {
       btn.addEventListener("click", (e) => {
-        const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
+        const turnosLocal = JSON.parse(localStorage.getItem("turnos")) || [];
         turnoIndexActual = e.target.dataset.index;
-        diagnosticoTexto.value = turnos[turnoIndexActual].diagnostico || "";
-        modo = "diagnostico";
+        diagnosticoTexto.value = turnosLocal[turnoIndexActual].diagnostico || "";
         diagnosticoModal.show();
       });
     });
@@ -98,10 +104,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Eventos: comentarios
     document.querySelectorAll(".comentarios-btn").forEach(btn => {
       btn.addEventListener("click", (e) => {
-        const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
+        const turnosLocal = JSON.parse(localStorage.getItem("turnos")) || [];
         turnoIndexActual = e.target.dataset.index;
-        comentariosTexto.value = turnos[turnoIndexActual].comentarios || "";
-        modo = "comentarios";
+        comentariosTexto.value = turnosLocal[turnoIndexActual].comentarios || "";
         comentariosModal.show();
       });
     });
@@ -110,22 +115,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // Guardar diagnóstico
   guardarDiagnosticoBtn.addEventListener("click", () => {
     if (turnoIndexActual !== null) {
-      const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
-      turnos[turnoIndexActual].diagnostico = diagnosticoTexto.value.trim();
-      localStorage.setItem("turnos", JSON.stringify(turnos));
+      const turnosLocal = JSON.parse(localStorage.getItem("turnos")) || [];
+      turnosLocal[turnoIndexActual].diagnostico = diagnosticoTexto.value.trim();
+      localStorage.setItem("turnos", JSON.stringify(turnosLocal));
       diagnosticoModal.hide();
-      cargarTurnos();
+      cargarTurnos(fechaPanel.value || null);
     }
   });
 
   // Guardar comentarios
   guardarComentariosBtn.addEventListener("click", () => {
     if (turnoIndexActual !== null) {
-      const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
-      turnos[turnoIndexActual].comentarios = comentariosTexto.value.trim();
-      localStorage.setItem("turnos", JSON.stringify(turnos));
+      const turnosLocal = JSON.parse(localStorage.getItem("turnos")) || [];
+      turnosLocal[turnoIndexActual].comentarios = comentariosTexto.value.trim();
+      localStorage.setItem("turnos", JSON.stringify(turnosLocal));
       comentariosModal.hide();
-      cargarTurnos();
+      cargarTurnos(fechaPanel.value || null);
     }
   });
 
@@ -137,5 +142,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Filtrar por fecha
+  filtrarBtn.addEventListener("click", () => {
+    if (fechaPanel.value) {
+      cargarTurnos(fechaPanel.value);
+    }
+  });
+
+  // Ver todos los turnos
+  verTodosBtn.addEventListener("click", () => {
+    fechaPanel.value = "";
+    cargarTurnos();
+  });
+
+  // Cargar inicialmente todos los turnos
   cargarTurnos();
 });
