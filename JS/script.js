@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 */
-
 document.addEventListener("DOMContentLoaded", () => {
   // ---------------------------
   // 1. Manejo de turnos
@@ -93,7 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Evento: cuando cambia la fecha
   if (fechaInput && horaSelect) {
     fechaInput.addEventListener("change", () => {
-      const fecha = new Date(fechaInput.value);
+      // ---- Solución para que funcione siempre localmente ----
+      const [año, mes, dia] = fechaInput.value.split("-").map(Number);
+      const fecha = new Date(año, mes - 1, dia); // mes -1 porque enero=0
       const diaSemana = fecha.getDay(); // 0=Domingo ... 6=Sábado
 
       horaSelect.innerHTML = `<option value="">Seleccione una hora</option>`; // reset
