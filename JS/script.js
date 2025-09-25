@@ -92,15 +92,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Evento: cuando cambia la fecha
   if (fechaInput && horaSelect) {
     fechaInput.addEventListener("change", () => {
-      // ---- Solución para que funcione siempre localmente ----
-      const [año, mes, dia] = fechaInput.value.split("-").map(Number);
-      const fecha = new Date(año, mes - 1, dia); // mes -1 porque enero=0
+      const [year, month, day] = fechaInput.value.split("-").map(Number);
+      // Hora fija a mediodía para evitar desajustes de zona horaria
+      const fecha = new Date(year, month - 1, day, 12, 0, 0);
       const diaSemana = fecha.getDay(); // 0=Domingo ... 6=Sábado
 
       horaSelect.innerHTML = `<option value="">Seleccione una hora</option>`; // reset
 
       if (horariosDisponibles[diaSemana]) {
-        // Generar horarios del día válido
         const { inicio, fin } = horariosDisponibles[diaSemana];
         const horarios = generarHorarios(inicio, fin, 10);
 
@@ -172,3 +171,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
