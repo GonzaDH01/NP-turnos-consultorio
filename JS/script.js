@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!selectedDates.length) return;
       const dia = selectedDates[0].getDay();
       horaSelect.innerHTML = `<option value="">Seleccione una hora</option>`;
-
       const { inicio, fin } = horariosDisponibles[dia];
       generarHorarios(inicio, fin, 10).forEach(h => {
         const opt = document.createElement("option");
@@ -48,20 +47,30 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ---------------------------
-  // 2. Botón Panel con contraseña
+  // 2. Botón Panel con modal de contraseña
   // ---------------------------
   const accesoPanel = document.getElementById("acceso-panel");
-  if (accesoPanel) {
-    accesoPanel.addEventListener("click", (e) => {
-      e.preventDefault();
-      const clave = prompt("Ingrese la contraseña para acceder al panel:");
-      if (clave === "panel2025") {
-        window.location.href = "pages/panel.html";
-      } else if (clave !== null) {
-        alert("Contraseña incorrecta");
-      }
-    });
-  }
+  const loginModal = new bootstrap.Modal(document.getElementById("loginPanelModal"));
+  const claveInput = document.getElementById("clavePanel");
+  const errorDiv = document.getElementById("errorPanel");
+  const ingresarBtn = document.getElementById("ingresarPanel");
+
+  accesoPanel.addEventListener("click", (e) => {
+    e.preventDefault();
+    claveInput.value = "";
+    errorDiv.classList.add("d-none");
+    loginModal.show();
+  });
+
+  ingresarBtn.addEventListener("click", () => {
+    const clave = claveInput.value.trim();
+    if(clave === "panel2025") { // <-- tu contraseña
+      loginModal.hide();
+      window.location.href = "pages/panel.html";
+    } else {
+      errorDiv.classList.remove("d-none");
+    }
+  });
 
   // ---------------------------
   // 3. Manejo de reservas y localStorage
@@ -99,29 +108,4 @@ document.addEventListener("DOMContentLoaded", () => {
       horaSelect.innerHTML = `<option value="">Seleccione una hora</option>`;
     });
   }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const accesoPanel = document.getElementById("acceso-panel");
-  const loginModal = new bootstrap.Modal(document.getElementById("loginPanelModal"));
-  const claveInput = document.getElementById("clavePanel");
-  const errorDiv = document.getElementById("errorPanel");
-  const ingresarBtn = document.getElementById("ingresarPanel");
-
-  accesoPanel.addEventListener("click", (e) => {
-    e.preventDefault();
-    claveInput.value = "";
-    errorDiv.classList.add("d-none");
-    loginModal.show();
-  });
-
-  ingresarBtn.addEventListener("click", () => {
-    const clave = claveInput.value.trim();
-    if(clave === "panel2025") { // <-- tu contraseña
-      loginModal.hide();
-      window.location.href = "pages/panel.html";
-    } else {
-      errorDiv.classList.remove("d-none");
-    }
-  });
 });
