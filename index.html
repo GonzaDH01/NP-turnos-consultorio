@@ -28,8 +28,12 @@
         </button>
         <div class="collapse navbar-collapse fw-bold" id="menu">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link active text-black" href="#inicio">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link text-black" href="pages/recetas.html">Recetas</a></li>
+            <!-- 🔴 Sección Inicio deshabilitada por pedido del cliente -->
+            <!-- <li class="nav-item"><a class="nav-link active text-black" href="#inicio">Inicio</a></li> -->
+
+            <!-- 🔴 Sección Recetas deshabilitada por pedido del cliente -->
+            <!-- <li class="nav-item"><a class="nav-link text-black" href="pages/recetas.html">Recetas</a></li> -->
+
             <li class="nav-item">  
               <a class="nav-link text-dark fw-bold" href="#" id="acceso-panel">Login</a>
             </li>
@@ -41,12 +45,21 @@
 
   <!-- MAIN -->
   <main>
-    <!-- Inicio -->
+    <!-- Inicio (mantener visible solo el mensaje de bienvenida y botones) -->
     <section id="inicio" class="py-5 text-center">
       <div class="container">
         <h1 class="display-5 fw-bold">Bienvenido al Consultorio Médico</h1>
         <p class="lead fw-bold">Reserve su turno de manera rápida y sencilla.</p>
-        <a href="#turnos" class="boton btn btn-lg fw-bold">Reservar Ahora</a>
+        
+        <!-- Botones principales -->
+        <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-4">
+          <a href="#turnos" class="btn btn-lg btn-primary fw-bold">Reservar Ahora</a>
+          <a href="https://wa.me/543562550718?text=Hola%20Doctora,%20quisiera%20recibir%20una%20receta%20m%C3%A9dica." 
+             target="_blank" 
+             class="btn btn-lg btn-success fw-bold">
+             Recetas Médicas
+          </a>
+        </div>
       </div>
     </section>
 
