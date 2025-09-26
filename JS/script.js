@@ -1,5 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
   // ---------------------------
+  // 0. Modal de confirmación de turno
+  // ---------------------------
+  const turnoModalElem = document.getElementById("turnoConfirmModal");
+  const turnoModal = turnoModalElem ? new bootstrap.Modal(turnoModalElem) : null;
+  const turnoModalBody = document.getElementById("turnoConfirmBody");
+
+  function mostrarTurnoModal(texto) {
+    if (turnoModalBody) turnoModalBody.innerHTML = texto;
+    if (turnoModal) turnoModal.show();
+  }
+
+  // ---------------------------
   // 1. Manejo de turnos con Flatpickr
   // ---------------------------
   const fechaInput = document.getElementById("fecha");
@@ -24,88 +36,87 @@ document.addEventListener("DOMContentLoaded", () => {
     return horarios;
   }
 
-  flatpickr(fechaInput, {
-    dateFormat: "Y-m-d",
-    minDate: "today",
-    enable: [
-      function(date) {
-        return [2,3,4].includes(date.getDay()); // Solo martes, miércoles, jueves
+  if (fechaInput && typeof flatpickr !== "undefined") {
+    flatpickr(fechaInput, {
+      dateFormat: "Y-m-d",
+      minDate: "today",
+      enable: [date => [2,3,4].includes(date.getDay())], // solo martes, miércoles, jueves
+      onChange: function(selectedDates) {
+        if (!selectedDates.length) return;
+        const dia = selectedDates[0].getDay();
+        horaSelect.innerHTML = `<option value="">Seleccione una hora</option>`;
+        const { inicio, fin } = horariosDisponibles[dia];
+        generarHorarios(inicio, fin, 10).forEach(h => {
+          const opt = document.createElement("option");
+          opt.value = h;
+          opt.textContent = h;
+          horaSelect.appendChild(opt);
+        });
       }
-    ],
-    onChange: function(selectedDates, dateStr, instance) {
-      if (!selectedDates.length) return;
-      const dia = selectedDates[0].getDay();
-      horaSelect.innerHTML = `<option value="">Seleccione una hora</option>`;
-      const { inicio, fin } = horariosDisponibles[dia];
-      generarHorarios(inicio, fin, 10).forEach(h => {
-        const opt = document.createElement("option");
-        opt.value = h;
-        opt.textContent = h;
-        horaSelect.appendChild(opt);
-      });
-    }
-  });
+    });
+  }
 
   // ---------------------------
   // 2. Botón Panel con modal de contraseña
   // ---------------------------
   const accesoPanel = document.getElementById("acceso-panel");
-  const loginModal = new bootstrap.Modal(document.getElementById("loginPanelModal"));
+  const loginModalElem = document.getElementById("loginPanelModal");
+  const loginModal = loginModalElem ? new bootstrap.Modal(loginModalElem) : null;
   const claveInput = document.getElementById("clavePanel");
   const errorDiv = document.getElementById("errorPanel");
   const ingresarBtn = document.getElementById("ingresarPanel");
 
-  accesoPanel.addEventListener("click", (e) => {
-    e.preventDefault();
-    claveInput.value = "";
-    errorDiv.classList.add("d-none");
-    loginModal.show();
-  });
+  if (accesoPanel) {
+    accesoPanel.addEventListener("click", e => {
+      e.preventDefault();
+      if (loginModal && claveInput && errorDiv) {
+        claveInput.value = "";
+        errorDiv.classList.add("d-none");
+        loginModal.show();
+      }
+    });
+  }
 
-  ingresarBtn.addEventListener("click", () => {
-    const clave = claveInput.value.trim();
-    if(clave === "panel2025") { // <-- tu contraseña
-      loginModal.hide();
-      window.location.href = "pages/panel.html";
-    } else {
-      errorDiv.classList.remove("d-none");
-    }
-  });
+  if (ingresarBtn && claveInput && loginModal && errorDiv) {
+    ingresarBtn.addEventListener("click", () => {
+      const clave = claveInput.value.trim();
+      if (clave === "panel2025") {
+        loginModal.hide();
+        window.location.href = "pages/panel.html";
+      } else {
+        errorDiv.classList.remove("d-none");
+      }
+    });
+  }
 
   // ---------------------------
   // 3. Manejo de reservas y localStorage
   // ---------------------------
   const formTurnos = document.querySelector("form.caja");
+
   if (formTurnos) {
-    formTurnos.addEventListener("submit", (e) => {
+    formTurnos.addEventListener("submit", e => {
       e.preventDefault();
 
       const nombre = document.getElementById("nombre").value.trim();
       const email = document.getElementById("email").value.trim();
       const telefono = document.getElementById("telefono").value.trim();
-      const fecha = fechaInput.value;
-      const hora = horaSelect.value;
+      const fecha = fechaInput ? fechaInput.value : "";
+      const hora = horaSelect ? horaSelect.value : "";
 
       if (!nombre || !email || !telefono || !fecha || !hora) {
-        alert("Por favor complete todos los campos.");
+        mostrarTurnoModal("⚠️ Por favor complete todos los campos.");
         return;
       }
 
       const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
-      turnos.push({
-        nombre,
-        email,
-        telefono,
-        fecha,
-        hora,
-        asistio: false,
-        atendido: false,
-      });
+      turnos.push({ nombre, email, telefono, fecha, hora, asistio:false, atendido:false });
       localStorage.setItem("turnos", JSON.stringify(turnos));
 
-      alert(`✅ Turno reservado para ${nombre} el ${fecha} a las ${hora}.`);
+      mostrarTurnoModal(`✅ Turno reservado para <strong>${nombre}</strong> el <strong>${fecha}</strong> a las <strong>${hora}</strong>.`);
+
       formTurnos.reset();
-      horaSelect.innerHTML = `<option value="">Seleccione una hora</option>`;
+      if (horaSelect) horaSelect.innerHTML = `<option value="">Seleccione una hora</option>`;
     });
   }
 });

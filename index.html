@@ -5,26 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consultorio Médico - Turnos</title>
   <!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Flatpickr CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-
-<!-- Tus estilos -->
-<link rel="stylesheet" href="CSS/estilos.css">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <!-- Tus estilos -->
+  <link rel="stylesheet" href="CSS/estilos.css">
 </head>
 
 <body>
-
   <!-- HEADER -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
-
         <a class="navbar-brand fw-bold" href="#">
-          <H4 class=" nombre fs-4 ">Dra.Ribotta Noelia</H4>
-          <h5 class=" subtitulo fs-6">Medica Generalista y de Familia</h5>
-          <h6 class=" matricula fs-6">MP.6997-RE 05115508</h6>
+          <h4 class="nombre fs-4">Dra.Ribotta Noelia</h4>
+          <h5 class="subtitulo fs-6">Medica Generalista y de Familia</h5>
+          <h6 class="matricula fs-6">MP.6997-RE 05115508</h6>
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -35,14 +31,13 @@
             <li class="nav-item"><a class="nav-link active text-black" href="#inicio">Inicio</a></li>
             <li class="nav-item"><a class="nav-link text-black" href="pages/recetas.html">Recetas</a></li>
             <li class="nav-item">  
-                                <a class="nav-link text-dark fw-bold" href="#" id="acceso-panel">Login</a>
-               </li>
+              <a class="nav-link text-dark fw-bold" href="#" id="acceso-panel">Login</a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
-
 
   <!-- MAIN -->
   <main>
@@ -59,8 +54,9 @@
     <section id="turnos" class="py-5">
       <div class="container">
         <h2 class="text-center mb-4">Reserva de Turnos</h2>
-        <form class=" caja row g-3 shadow p-4  rounded">
-            
+
+        <!-- Formulario -->
+        <form class="caja row g-3 shadow p-4 rounded">
           <div class="col-md-6">
             <label for="nombre" class="form-label text-white">Apellido y Nombre</label>
             <input type="text" class="form-control" id="nombre" required>
@@ -95,73 +91,82 @@
       </div>
     </section>  
 
-    
-
     <!-- Contacto -->
     <section id="contacto" class="py-5">
-  <div class="container">
-    <h2 class="mb-4 text-center"> Contacto</h2>
+      <div class="container">
+        <h2 class="mb-4 text-center">Contacto</h2>
+        <div class="row text-center">
+          <div class="col-md-12 mb-4 mb-md-0">
+            <p>
+              <a href="https://wa.me/543562550718" target="_blank" class="contact-link">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" 
+                  alt="Logo de WhatsApp" width="30" style="vertical-align:middle; margin-right:8px;">
+                (3562) 55-0718
+              </a>
+            </p>
+            <p>
+              <a href="mailto:ribottanoelia@gmail.com" class="contact-link">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" 
+                  alt="Logo de Gmail" width="30" style="vertical-align:middle; margin-right:8px;">
+                ribottanoelia@gmail.com
+              </a>
+            </p>
+          </div>
 
-    <div class="row text-center">
-      <!-- Columna: Íconos -->
-      <div class="col-md-12 text-center mb-4 mb-md-0">
-        <p>
-          <a href="https://wa.me/543562550718" target="_blank" class="contact-link">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" 
-              alt="Logo de WhatsApp" width="30" style="vertical-align:middle; margin-right:8px;">
-            (3562) 55-0718
-          </a>
-        </p>
-
-        <p>
-          <a href="mailto:ribottanoelia@gmail.com" class="contact-link">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" 
-              alt="Logo de Gmail" width="30" style="vertical-align:middle; margin-right:8px;">
-            ribottanoelia@gmail.com
-          </a>
-        </p>
+          <div class="col-md-12">
+            <div class="map-container">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3442.926373195521!2d-61.918111056617605!3d-30.3530423124074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c80c62d62d59f1%3A0x9e4f5c8f0c5e3f3f!2sBv.%20Pedro%20Candiotti%20436%2C%20San%20Guillermo%2C%20Santa%20Fe!5e0!3m2!1ses-419!2sar!4v1691406351234!5m2!1ses-419!2sar" 
+                width="70%" height="70%" style="border:0; border-radius:20px;" allowfullscreen="" loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Columna: Mapa -->
-      <div class="col-md-12">
-        <div class="map-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3442.926373195521!2d-61.918111056617605!3d-30.3530423124074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c80c62d62d59f1%3A0x9e4f5c8f0c5e3f3f!2sBv.%20Pedro%20Candiotti%20436%2C%20San%20Guillermo%2C%20Santa%20Fe!5e0!3m2!1ses-419!2sar!4v1691406351234!5m2!1ses-419!2sar" 
-            width="70%" 
-            height="70%" 
-            style="border:0; border-radius:20px;" 
-            allowfullscreen="" 
-            loading="lazy">
-          </iframe>
+    <!-- Modal Login Panel -->
+    <div class="modal fade" id="loginPanelModal" tabindex="-1" aria-labelledby="loginPanelLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="loginPanelLabel">Acceso al Panel</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="clavePanel" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="clavePanel" placeholder="Ingrese la contraseña">
+            </div>
+            <div id="errorPanel" class="text-danger small d-none">Contraseña incorrecta</div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-success" id="ingresarPanel">Ingresar</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- Modal Login Panel -->
-<div class="modal fade" id="loginPanelModal" tabindex="-1" aria-labelledby="loginPanelLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title" id="loginPanelLabel">Acceso al Panel</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body">
-        <div class="mb-3">
-          <label for="clavePanel" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="clavePanel" placeholder="Ingrese la contraseña">
+
+    <!-- Modal Confirmación Turno -->
+    <div class="modal fade" id="turnoConfirmModal" tabindex="-1" aria-labelledby="turnoConfirmLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="turnoConfirmLabel">Turno Reservado</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body" id="turnoConfirmBody">
+            <!-- Mensaje dinámico -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+          </div>
         </div>
-        <div id="errorPanel" class="text-danger small d-none">Contraseña incorrecta</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success" id="ingresarPanel">Ingresar</button>
       </div>
     </div>
-  </div>
-</div>
 
-</main>
+  </main>
 
   <!-- FOOTER -->
   <footer class="text-black text-center py-3">
@@ -169,11 +174,10 @@
   </footer>
 
   <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Flatpickr JS -->
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<!-- Tu script de turnos -->
-<script src="JS/script.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <!-- Tu script de turnos -->
+  <script src="JS/script.js"></script>
 </body>
 </html>
