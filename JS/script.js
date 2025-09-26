@@ -100,3 +100,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const accesoPanel = document.getElementById("acceso-panel");
+  const loginModal = new bootstrap.Modal(document.getElementById("loginPanelModal"));
+  const claveInput = document.getElementById("clavePanel");
+  const errorDiv = document.getElementById("errorPanel");
+  const ingresarBtn = document.getElementById("ingresarPanel");
+
+  accesoPanel.addEventListener("click", (e) => {
+    e.preventDefault();
+    claveInput.value = "";
+    errorDiv.classList.add("d-none");
+    loginModal.show();
+  });
+
+  ingresarBtn.addEventListener("click", () => {
+    const clave = claveInput.value.trim();
+    if(clave === "panel2025") { // <-- tu contraseña
+      loginModal.hide();
+      window.location.href = "pages/panel.html";
+    } else {
+      errorDiv.classList.remove("d-none");
+    }
+  });
+});

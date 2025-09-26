@@ -34,13 +34,15 @@
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link active text-black" href="#inicio">Inicio</a></li>
             <li class="nav-item"><a class="nav-link text-black" href="pages/recetas.html">Recetas</a></li>
-            <li class="nav-item">
-    <a class="nav-link text-dark fw-bold" href="pages/panel.html" id="acceso-panel">Panel</a></li>
+            <li class="nav-item">  
+                                <a class="nav-link text-dark fw-bold" href="#" id="acceso-panel">Login</a>
+               </li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
+
 
   <!-- MAIN -->
   <main>
@@ -136,7 +138,28 @@
     </div>
   </div>
 </section>
-
+<!-- Modal Login Panel -->
+<div class="modal fade" id="loginPanelModal" tabindex="-1" aria-labelledby="loginPanelLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="loginPanelLabel">Acceso al Panel</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="clavePanel" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="clavePanel" placeholder="Ingrese la contraseña">
+        </div>
+        <div id="errorPanel" class="text-danger small d-none">Contraseña incorrecta</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" id="ingresarPanel">Ingresar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </main>
 
